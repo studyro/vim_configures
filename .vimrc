@@ -9,8 +9,16 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " required. Makes Vundle manage Vundle.
 
+" General plugins
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-fugitive'
+
+" Plugins for Ruby
+Bundle 'vim-ruby/vim-ruby'
+Plugin 'skalnik/vim-vroom'
+Plugin 'tpope/vim-endwise'
 
 " ll of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,9 +61,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 let mapleader=","
 
 " Autocompletion
-set complete=.,b,]
-set wildmode=longest,list:longest
-imap <Tab> <C-p>
+" set complete=.,b,]
+" set wildmode=longest,list:longest
+" imap <Tab> <C-p>
 
 " A remap to Ag.vim
 nnoremap <leader>a :Ag<space>
