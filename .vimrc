@@ -96,6 +96,11 @@ augroup configgroup
             autocmd FileType ruby setlocal shiftwidth=2
             autocmd FileType ruby setlocal softtabstop=2
             autocmd FileType ruby setlocal commentstring=#\ %s
+            autocmd FileType ruby compiler ruby
+            autocmd FileType ruby set omnifunc=rubycomplete#Complete
+            autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+            autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+            autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
             autocmd FileType python setlocal commentstring=#\ %s
             autocmd BufEnter *.cls setlocal filetype=java
             autocmd BufEnter *.zsh-theme setlocal filetype=zsh
