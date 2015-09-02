@@ -1,28 +1,26 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-
-Plugin 'gmarik/Vundle.vim' " required. Makes Vundle manage Vundle.
+call plug#begin('~/.vim/plugged')
 
 " General plugins
-Plugin 'rking/ag.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
+Plug 'rking/ag.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 " Plugins for Ruby
-Bundle 'vim-ruby/vim-ruby'
-Plugin 'skalnik/vim-vroom'
-Plugin 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'skalnik/vim-vroom'
+Plug 'tpope/vim-endwise'
 
 " ll of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
+"
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
@@ -55,10 +53,14 @@ set lazyredraw
 set wildmenu
 set shell=zsh
 set clipboard=unnamed
+set splitright
+set splitbelow
 
 " Searching
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Leader
@@ -66,8 +68,16 @@ let mapleader=","
 
 " Autocompletion
 " set complete=.,b,]
-" set wildmode=longest,list:longest
-" imap <Tab> <C-p>
+set wildmode=longest,list:longest
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.gif,*.jpg,*.png,*.log
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+set wildignore+=*/resources/*
+set wildignore+=node_modules/*
+set wildignore+=*.swp,*~,._*
+set wildignore+=.DS_Store
 
 " A remap to Ag.vim
 nnoremap <leader>a :Ag<space>
@@ -101,6 +111,7 @@ augroup configgroup
             autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
             autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
             autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+            autocmd FileType ruby let g:SuperTabDefaultCompletionType = "context"
             autocmd FileType python setlocal commentstring=#\ %s
             autocmd BufEnter *.cls setlocal filetype=java
             autocmd BufEnter *.zsh-theme setlocal filetype=zsh
