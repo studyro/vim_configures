@@ -1,5 +1,7 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+syntax on
+filetype on " required
+filetype plugin indent on    " required
 
 call plug#begin('~/.vim/plugged')
 
@@ -11,6 +13,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
+Plug 'scrooloose/nerdtree'
 
 " Plugins for Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -21,7 +25,6 @@ Plug 'tpope/vim-endwise'
 call plug#end()
 
 "
-filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 " 
@@ -37,9 +40,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Colors
-" colorscheme Tomorrow-Night-Bright
-colorscheme jellybeans
-syntax enable
+" colorscheme jellybeans
+colorscheme Tomorrow-Night
 
 " Basic Configurations
 set tabstop=4
@@ -56,11 +58,18 @@ set clipboard=unnamed
 set splitright
 set splitbelow
 
+" Folding
+set foldmethod=indent
+set foldlevel=1
+set foldnestmax=10
+set nofoldenable " Open all folds by default
+
 " Searching
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set tags+=gems.tags " Add gems.tags to files searched for tags
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Leader
@@ -87,6 +96,13 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|resources\|coverage\|doc\|tmp\|public/assets\|vendor\|Android',
+  \ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
+  \ }
+" CtrlP Funky
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_multi_buffers = 1
 
 " Autogroups for some type of files.
 augroup configgroup
