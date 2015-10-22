@@ -57,6 +57,7 @@ set shell=zsh
 set clipboard=unnamed
 set splitright
 set splitbelow
+set mouse=a
 
 " Folding
 set foldmethod=indent
