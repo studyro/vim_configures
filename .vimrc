@@ -21,6 +21,9 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'skalnik/vim-vroom'
 Plug 'tpope/vim-endwise'
 
+" Plugin for Swift
+Plug 'https://github.com/keith/swift.vim.git'
+
 " ll of your Plugins must be added before the following line
 call plug#end()
 
