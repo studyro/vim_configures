@@ -20,6 +20,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-ruby/vim-ruby'
 Plug 'skalnik/vim-vroom'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-bundler'
 
 " Plugin for Swift
 Plug 'https://github.com/keith/swift.vim.git'
@@ -61,6 +62,7 @@ set clipboard=unnamed
 set splitright
 set splitbelow
 set mouse=a
+set tags=./tags
 
 " Folding
 set foldmethod=indent
@@ -94,6 +96,8 @@ set wildignore+=.DS_Store
 
 " A remap to Ag.vim
 nnoremap <leader>a :Ag<space>
+" A remap to CtrlP Tag searching
+nnoremap <leader>o :CtrlPTag<CR>
 
 " Configuration for ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
