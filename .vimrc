@@ -21,6 +21,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'skalnik/vim-vroom'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
 
 " Plugin for Swift
 Plug 'https://github.com/keith/swift.vim.git'
