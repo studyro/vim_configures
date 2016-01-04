@@ -15,6 +15,7 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
 
 " Plugins for Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -49,8 +50,9 @@ call plug#end()
 colorscheme Tomorrow-Night
 
 " Basic Configurations
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set showcmd
@@ -127,16 +129,16 @@ augroup configgroup
             autocmd FileType php setlocal list
             autocmd FileType php setlocal listchars=tab:+\ ,eol:-
             autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-            autocmd FileType ruby setlocal tabstop=2
-            autocmd FileType ruby setlocal shiftwidth=2
-            autocmd FileType ruby setlocal softtabstop=2
-            autocmd FileType ruby setlocal commentstring=#\ %s
-            autocmd FileType ruby compiler ruby
-            autocmd FileType ruby set omnifunc=rubycomplete#Complete
-            autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-            autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-            autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-            autocmd FileType ruby let g:SuperTabDefaultCompletionType = "context"
+            " autocmd FileType ruby setlocal tabstop=2
+            " autocmd FileType ruby setlocal shiftwidth=2
+            " autocmd FileType ruby setlocal softtabstop=2
+            " autocmd FileType ruby setlocal commentstring=#\ %s
+            " autocmd FileType ruby compiler ruby
+            " autocmd FileType ruby set omnifunc=rubycomplete#Complete
+            " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+            " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+            " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+            " autocmd FileType ruby let g:SuperTabDefaultCompletionType = "context"
             autocmd FileType python setlocal commentstring=#\ %s
             autocmd BufEnter *.cls setlocal filetype=java
             autocmd BufEnter *.zsh-theme setlocal filetype=zsh
