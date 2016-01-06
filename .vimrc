@@ -101,6 +101,8 @@ set wildignore+=.DS_Store
 nnoremap <leader>a :Ag<space>
 " A remap to CtrlP Tag searching
 nnoremap <leader>o :CtrlPTag<CR>
+" A remap to TagBar.vim toggling
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Configuration for ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
