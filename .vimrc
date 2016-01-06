@@ -11,6 +11,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
@@ -66,6 +67,7 @@ set splitright
 set splitbelow
 set mouse=a
 set tags=./tags
+set laststatus=2
 
 " Folding
 set foldmethod=indent
