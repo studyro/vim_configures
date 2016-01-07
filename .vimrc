@@ -119,6 +119,12 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_multi_buffers = 1
 
+" Configuration for ultisnips.vim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsEditSplit="vertical"
+
 " Autogroups for some type of files.
 augroup configgroup
             autocmd!
