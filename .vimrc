@@ -11,12 +11,16 @@ Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
-"Plug 'edkolev/tmuxline.vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+
+" Plugins for JavaScript
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 
 " Plugins for Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -118,6 +122,10 @@ let g:ctrlp_custom_ignore = {
 " CtrlP Funky
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_multi_buffers = 1
+" syntastic configurations
+let g:syntastic_javascript_checkers = ['eslint']
+" jsx configurations
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Autogroups for some type of files.
 augroup configgroup
