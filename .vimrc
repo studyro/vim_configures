@@ -109,6 +109,8 @@ nnoremap <leader>a :Ag<space>
 nnoremap <leader>o :CtrlPTag<CR>
 " A remap to TagBar.vim toggling
 nnoremap <leader>t :TagbarToggle<CR>
+" A remap to NERDTree toggling
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Configuration for ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
