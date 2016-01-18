@@ -21,6 +21,8 @@ Plug 'scrooloose/syntastic'
 " Plugins for JavaScript
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 " Plugins for Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -51,8 +53,11 @@ call plug#end()
 " Put your non-Plugin stuff after this line
 
 " Colors
-" colorscheme jellybeans
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+set background=dark
+colorscheme hybrid
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 0 " Remove this line if using the default palette.
 
 " Basic Configurations
 set tabstop=2
@@ -128,6 +133,8 @@ let g:ctrlp_funky_multi_buffers = 1
 let g:syntastic_javascript_checkers = ['eslint']
 " jsx configurations
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'react'
 
 " Autogroups for some type of files.
 augroup configgroup
@@ -143,16 +150,6 @@ augroup configgroup
             autocmd FileType php setlocal list
             autocmd FileType php setlocal listchars=tab:+\ ,eol:-
             autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-            " autocmd FileType ruby setlocal tabstop=2
-            " autocmd FileType ruby setlocal shiftwidth=2
-            " autocmd FileType ruby setlocal softtabstop=2
-            " autocmd FileType ruby setlocal commentstring=#\ %s
-            " autocmd FileType ruby compiler ruby
-            " autocmd FileType ruby set omnifunc=rubycomplete#Complete
-            " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-            " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-            " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-            " autocmd FileType ruby let g:SuperTabDefaultCompletionType = "context"
             autocmd FileType python setlocal commentstring=#\ %s
             autocmd BufEnter *.cls setlocal filetype=java
             autocmd BufEnter *.zsh-theme setlocal filetype=zsh
