@@ -11,12 +11,18 @@ Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
-"Plug 'edkolev/tmuxline.vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+
+" Plugins for JavaScript
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 " Plugins for Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -47,8 +53,11 @@ call plug#end()
 " Put your non-Plugin stuff after this line
 
 " Colors
-" colorscheme jellybeans
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+set background=dark
+colorscheme hybrid
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 0 " Remove this line if using the default palette.
 
 " Basic Configurations
 set tabstop=2
@@ -105,6 +114,8 @@ nnoremap <leader>a :Ag<space>
 nnoremap <leader>o :CtrlPTag<CR>
 " A remap to TagBar.vim toggling
 nnoremap <leader>t :TagbarToggle<CR>
+" A remap to NERDTree toggling
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Configuration for ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
@@ -118,6 +129,12 @@ let g:ctrlp_custom_ignore = {
 " CtrlP Funky
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_multi_buffers = 1
+" syntastic configurations
+let g:syntastic_javascript_checkers = ['eslint']
+" jsx configurations
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'react'
 
 " Configuration for ultisnips.vim
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -139,16 +156,6 @@ augroup configgroup
             autocmd FileType php setlocal list
             autocmd FileType php setlocal listchars=tab:+\ ,eol:-
             autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-            " autocmd FileType ruby setlocal tabstop=2
-            " autocmd FileType ruby setlocal shiftwidth=2
-            " autocmd FileType ruby setlocal softtabstop=2
-            " autocmd FileType ruby setlocal commentstring=#\ %s
-            " autocmd FileType ruby compiler ruby
-            " autocmd FileType ruby set omnifunc=rubycomplete#Complete
-            " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-            " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-            " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-            " autocmd FileType ruby let g:SuperTabDefaultCompletionType = "context"
             autocmd FileType python setlocal commentstring=#\ %s
             autocmd BufEnter *.cls setlocal filetype=java
             autocmd BufEnter *.zsh-theme setlocal filetype=zsh
