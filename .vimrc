@@ -17,6 +17,7 @@ Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
+Plug 'terryma/vim-multiple-cursors'
 
 " Plugins for JavaScript
 Plug 'mxw/vim-jsx'
