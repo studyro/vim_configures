@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
 
 " Plugins for JavaScript
 Plug 'mxw/vim-jsx'
