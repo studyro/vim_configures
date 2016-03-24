@@ -7,7 +7,8 @@ call plug#begin('~/.vim/plugged')
 
 " General plugins
 Plug 'rking/ag.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
@@ -118,6 +119,8 @@ nnoremap <leader>o :CtrlPTag<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 " A remap to NERDTree toggling
 nnoremap <leader>n :NERDTreeToggle<CR>
+" A remap to fzf toggling
+nnoremap <C-p>     :FZF<CR>
 
 " Configuration for ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
@@ -129,8 +132,10 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
   \ }
 " CtrlP Funky
-let g:ctrlp_extensions = ['funky']
-let g:ctrlp_funky_multi_buffers = 1
+" let g:ctrlp_extensions = ['funky']
+" let g:ctrlp_funky_multi_buffers = 1
+" fzf configuration
+let g:fzf_height='30%'
 " syntastic configurations
 let g:syntastic_javascript_checkers = ['eslint']
 " jsx configurations
