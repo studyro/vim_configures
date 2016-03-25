@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 " General plugins
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 "Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
@@ -120,7 +121,7 @@ nnoremap <leader>t :TagbarToggle<CR>
 " A remap to NERDTree toggling
 nnoremap <leader>n :NERDTreeToggle<CR>
 " A remap to fzf toggling
-nnoremap <C-p>     :FZF<CR>
+nnoremap <C-p>     :Files<CR>
 
 " Configuration for ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
