@@ -7,5 +7,8 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 ln -s ~/.vim/.ctags ~/.ctags
 ln -s ~/.vim/.eslintrc ~/.eslintrc
 
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vim/.nvimrc ~/.config/nvim/init.vim
+
 # Install all Plugins
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
