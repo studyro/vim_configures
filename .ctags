@@ -7,6 +7,8 @@
 --exclude=deps
 --exclude=node_modules
 --exclude=public/assets
+--exclude=db
+--exclude=vendor
 --languages=-javascript,sql
 --extra=+f
 --append
