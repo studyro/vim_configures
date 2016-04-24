@@ -19,7 +19,7 @@ Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'majutsushi/tagbar' " nmap <leader>t :TagbarToggle<CR>
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -132,7 +132,10 @@ let g:ctrlp_custom_ignore = {
 " fzf configuration
 let g:fzf_height='30%'
 " syntastic configurations
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
+" neomake configurations
+let g:neomake_javascript_enabled_makers = ['eslint']
+autocmd! BufWritePost,BufEnter * Neomake
 " jsx configurations
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " javascript-libraries-syntax
