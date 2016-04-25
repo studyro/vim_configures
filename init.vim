@@ -1,1 +1,1 @@
-/Users/zhangstudyro/.vim/.nvimrc
+/Users/peterzhang/.vim/.nvimrc
