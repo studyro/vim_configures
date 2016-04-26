@@ -145,9 +145,10 @@ let g:used_javascript_libs = 'react'
 " let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " Configuration for ultisnips.vim
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 " let g:UltiSnipsEditSplit="vertical"
 
 " let g:SuperTabDefaultCompletionType = "context"
