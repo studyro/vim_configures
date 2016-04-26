@@ -2,3 +2,5 @@
 bundle
 plugged
 *.swp
+.vim
+init.vim
