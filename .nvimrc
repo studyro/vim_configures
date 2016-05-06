@@ -11,7 +11,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'kien/ctrlp.vim'
 "Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'on': [] }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer', 'on': [] }
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'honza/vim-snippets'
@@ -49,6 +49,9 @@ augroup load_us_ycm
   autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
                      \| call youcompleteme#Enable() | autocmd! load_us_ycm
 augroup END
+
+" autocmd! BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/config/filetype.vim'
 
 " Colors
 " colorscheme Tomorrow-Night
@@ -159,6 +162,22 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
 set complete=.,w,b,u,U,t,i,d
+
+" let g:ycm_semantic_triggers =  {
+"             \   'c' : ['->', '.'],
+"             \   'objc' : ['->', '.'],
+"             \   'ocaml' : ['.', '#'],
+"             \   'cpp,objcpp' : ['->', '.', '::'],
+"             \   'perl' : ['->'],
+"             \   'php' : ['->', '::', '"', "'", 'use ', 'namespace ', '\'],
+"             \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+"             \   'html,xml,erb,ejs,liquid' : ['<', 're!<.*\s', '</'],
+"             \   'vim' : ['#', '_', 'g:', 'v:', 's:', 'b:', 'w:'],
+"             \   'lua' : ['.', ':'],
+"             \   'erlang' : [':'],
+"             \   'haskell' : ['.', 're!.'],
+"             \   'css,scss': [ 're!^\s{2}', 're!:\s+' ]
+"             \ }
 
 augroup omni_complete
   " clear commands before resetting
