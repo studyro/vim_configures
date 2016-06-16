@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set re=1
 syntax on
 filetype on " required
 filetype plugin indent on    " required
